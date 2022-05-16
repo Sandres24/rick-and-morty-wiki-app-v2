@@ -1,0 +1,45 @@
+.location-suggestions {
+  background: #000;
+  height: 325px;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 1rem;
+  border-radius: 0rem 0rem 1rem 1rem;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.location-suggestions::-webkit-scrollbar {
+  width: 10px;
+}
+
+.location-suggestions::-webkit-scrollbar-track {
+  background: var(--hr-color);
+  border-radius: 1rem;
+}
+
+.location-suggestions::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, .5);
+  border-radius: 1rem;
+}
+
+.location-suggestions-hr {
+  margin-bottom: .75rem;
+}
+
+.location-suggestions-item {
+  padding: .25rem 0;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .location-suggestions-item {
+    font-size: 1.25rem;
+  }
+
+  .location-suggestions-item:hover {
+    background: rgba(231, 32, 90, .3);
+  }
+}

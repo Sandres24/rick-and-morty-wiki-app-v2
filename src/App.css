@@ -1,38 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap');
+
+:root {
+  --title-subtitle-color: #7e7e7e;
+  --title-font-size: 2.5rem;
+  --second-title-font-size: 1.75rem;
+  --subtitle-font-size: 1rem;
+  --second-subtitle-font-size-mobile: .9rem;
+  --second-subtitle-font-size: 1.25rem;
+  --hr-color: rgba(255, 255, 255, .25);
+  --color-font: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url('./assets/images/app-background.jpg') no-repeat center fixed;
+  background-size: cover;
+  color: var(--color-font);
+  font-family: 'Fredoka', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
 .App {
-  text-align: center;
+  max-width: 992px;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.info-section {
+  background: rgba(231, 32, 90, .3);
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  border-radius: .5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (min-width: 992px) {
+  .info-section {
+    width: 100%;
   }
 }

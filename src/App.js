@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { Banner, LocationInfo, ResidentsList, SearchBox } from './components';
+import { useFetch } from './hooks';
+import { getLocationUrl, getRandomNumber } from './utils';
+
+const id = getLocationUrl({ id: getRandomNumber({ limit: 126 }) });
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   const [url, setUrl] = useState(id);
+   const { data: location, isLoading, error } = useFetch(url);
+
+   const handleChangeUrl = (url) => setUrl(url);
+
+   return (
+      <div className='App'>
+         <Banner />
+         <SearchBox handleChangeUrl={handleChangeUrl} />
+         <LocationInfo
+            location={location}
+            isLoading={isLoading}
+            error={error}
+         />
+         <ResidentsList
+            url={url}
+            location={location}
+            isLoading={isLoading}
+            error={error}
+         />
+      </div>
+   );
 }
 
 export default App;

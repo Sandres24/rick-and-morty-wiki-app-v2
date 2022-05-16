@@ -1,0 +1,6 @@
+.banner {
+    background: url('../../assets/images/rick-and-morty-banner.jpg') no-repeat;
+    background-position-y: 20%;
+    background-size: cover;
+    height: 200px;
+}

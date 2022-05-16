@@ -1,0 +1,35 @@
+.location-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.location-info-title {
+    font-size: var(--second-title-font-size);
+    font-weight: bold;
+}
+
+.location {
+    margin-top: 1rem;
+}
+
+.location-subtitle {
+    font-size: 1.25rem;
+}
+
+.location-text {
+    font-size: var(--subtitle-font-size);
+    margin-top: .25rem;
+}
+
+@media (min-width: 600px) {
+    .location-description {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .location {
+        margin: 0 1rem;
+    }
+}

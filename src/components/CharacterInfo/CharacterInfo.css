@@ -1,0 +1,37 @@
+.character-status {
+    background: rgba(0, 0, 0, .75);
+    width: 125px;
+    height: 25px;
+    border-radius: 0 .35rem .35rem 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+}
+
+.status-icon {
+    width: 15px;
+    height: 15px;
+    margin: 0 .5rem;
+    border-radius: 50%;
+}
+
+.status {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.character-info {
+    margin-top: .5rem;
+}
+
+.character-subtitle {
+    color: var(--title-subtitle-color);
+    font-weight: bold;
+    font-size: var(--subtitle-font-size);
+}
+
+.character-text {
+    font-size: 1.25rem;
+}

@@ -1,0 +1,23 @@
+.residents-list {
+    min-height: calc(100vh - 458px);
+}
+
+.residents-list-title {
+    text-align: center;
+    font-size: var(--title-font-size);
+    font-weight: bold;
+}
+
+.residents-list-hr {
+    background: var(--hr-color);
+    margin: 1rem 0 1.5rem 0;
+    border: 2px solid var(--hr-color);
+    border-radius: 2px;
+}
+
+.residents-list-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min-content, 350px));
+    gap: 2rem;
+    justify-content: space-evenly;
+}
