@@ -1,5 +1,13 @@
+.spinner, .error {
+    text-align: center;
+}
+
 .residents-list {
     min-height: calc(100vh - 458px);
+}
+
+.residents-list.list-empty {
+    text-align: center;
 }
 
 .residents-list-title {
@@ -20,4 +28,9 @@
     grid-template-columns: repeat(auto-fill, minmax(min-content, 350px));
     gap: 2rem;
     justify-content: space-evenly;
+}
+
+.residents-list-wrapper.list-empty {
+    display: flex;
+    justify-content: center;
 }

@@ -10,6 +10,7 @@
     justify-content: center;
     position: relative;
     cursor: pointer;
+    transition: border-radius 1s ease;
 }
 
 .select-input-text {
@@ -21,6 +22,7 @@
 
 .select-input.options-active {
     border-radius: 1rem 0 0 0;
+    transition: border-radius 0s ease;
 }
 
 .select-input i {

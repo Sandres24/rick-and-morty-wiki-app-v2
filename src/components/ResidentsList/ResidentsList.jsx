@@ -30,17 +30,15 @@ function ResidentsList({ url, location, isLoading, error }) {
          <section className='info-section residents-list'>
             <h2 className='residents-list-title'>Residents</h2>
             <hr className='residents-list-hr' />
-
-            <h2>Loading...</h2>
+            <h2 className='spinner'>Loading...</h2>
          </section>
       );
 
    if (error)
       return (
-         <section className='info-section residents-list'>
+         <section className='info-section residents-list error'>
             <h2 className='residents-list-title'>Residents</h2>
             <hr className='residents-list-hr' />
-
             <h2>Error...</h2>
          </section>
       );
@@ -50,16 +48,29 @@ function ResidentsList({ url, location, isLoading, error }) {
          <h2 className='residents-list-title'>Residents</h2>
          <hr className='residents-list-hr' />
          {location && (
-            <div className='residents-list-wrapper'>
-               {location.residents
-                  .slice(
-                     pagination.offSet,
-                     pagination.offSet + pagination.elementsPerPage
-                  )
-                  .map((resident) => (
-                     <CharacterCard key={resident} characterUrl={resident} />
-                  ))}
-            </div>
+            <>
+               {location.residents.length > 0 ? (
+                  <div className='residents-list-wrapper'>
+                     {location.residents
+                        .slice(
+                           pagination.offSet,
+                           pagination.offSet + pagination.elementsPerPage
+                        )
+                        .map((resident) => (
+                           <CharacterCard
+                              key={resident}
+                              characterUrl={resident}
+                           />
+                        ))}
+                  </div>
+               ) : (
+                  <div className='residents-list-wrapper list-empty'>
+                     <h2 className='residents-list list-empty'>
+                        There are no residents to list...
+                     </h2>
+                  </div>
+               )}
+            </>
          )}
          {location && (
             <Pagination
