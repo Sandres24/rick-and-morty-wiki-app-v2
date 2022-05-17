@@ -1,18 +1,19 @@
 import React from 'react';
+import Spinner from '../Spinner/Spinner';
 import './LocationInfo.css';
 
 function LocationInfo({ location, isLoading, error }) {
    if (isLoading)
       return (
-         <section className='info-section location-info'>
-            <h2>Loading...</h2>
+         <section className='info-section location-info loading'>
+            <Spinner />
          </section>
       );
 
    if (error)
       return (
-         <section className='info-section location-info'>
-            <h2>Error...</h2>
+         <section className='info-section location-info error'>
+            <h3 className='error'>Something went wrong!</h3>
          </section>
       );
 

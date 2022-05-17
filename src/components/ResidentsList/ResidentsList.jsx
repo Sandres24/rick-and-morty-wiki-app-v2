@@ -2,23 +2,28 @@ import React, { useEffect, useState } from 'react';
 import { paginationOffSet } from '../../utils';
 import CharacterCard from '../Card/CharacterCard';
 import Pagination from '../Pagination/Pagination';
+import Spinner from '../Spinner/Spinner';
 import './ResidentsList.css';
 
 const initialPagination = { page: 1, offSet: 0, elementsPerPage: 10 };
 
 function ResidentsList({ url, location, isLoading, error }) {
-   const [pagination, setPagination] = useState(initialPagination);
+   const [pagination, setPagination] = useState({
+      page: 1,
+      offSet: 0,
+      elementsPerPage: 10,
+   });
 
    const handlePagination = (page) => {
+      window.scrollTo(0, 0);
       setPagination((prevPagination) => ({
-         ...prevPagination,
          page,
          offSet: paginationOffSet({
             page,
             elementsPerPage: prevPagination.elementsPerPage,
          }),
+         elementsPerPage: prevPagination.elementsPerPage,
       }));
-      window.scrollTo(0, 0);
    };
 
    useEffect(() => {
@@ -27,10 +32,10 @@ function ResidentsList({ url, location, isLoading, error }) {
 
    if (isLoading)
       return (
-         <section className='info-section residents-list'>
+         <section className='info-section residents-list loading'>
             <h2 className='residents-list-title'>Residents</h2>
             <hr className='residents-list-hr' />
-            <h2 className='spinner'>Loading...</h2>
+            <Spinner />
          </section>
       );
 
@@ -39,7 +44,7 @@ function ResidentsList({ url, location, isLoading, error }) {
          <section className='info-section residents-list error'>
             <h2 className='residents-list-title'>Residents</h2>
             <hr className='residents-list-hr' />
-            <h2>Error...</h2>
+            <h3 className='error'>Something went wrong!</h3>
          </section>
       );
 
@@ -64,11 +69,7 @@ function ResidentsList({ url, location, isLoading, error }) {
                         ))}
                   </div>
                ) : (
-                  <div className='residents-list-wrapper list-empty'>
-                     <h2 className='residents-list list-empty'>
-                        There are no residents to list...
-                     </h2>
-                  </div>
+                  <p className='list-empty'>There are no residents to list!</p>
                )}
             </>
          )}

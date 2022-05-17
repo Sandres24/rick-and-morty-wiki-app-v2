@@ -1,3 +1,4 @@
+export { default as Spinner } from './Spinner/Spinner';
 export { default as Banner } from './Banner/Banner';
 export { default as SearchBox } from './SearchBox/SearchBox';
 export { default as SelectInput } from './SelectInput/SelectInput';

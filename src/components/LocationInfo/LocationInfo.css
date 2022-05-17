@@ -1,7 +1,12 @@
 .location-info {
     text-align: center;
+    min-height: 162px;
     display: flex;
     flex-direction: column;
+}
+
+.location-info.error {
+    justify-content: center;
 }
 
 .location-info-title {

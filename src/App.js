@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import './App.css';
 import { Banner, LocationInfo, ResidentsList, SearchBox } from './components';
 import { useFetch } from './hooks';
 import { getLocationUrl, getRandomNumber } from './utils';
+import './App.css';
 
 const id = getLocationUrl({ id: getRandomNumber({ limit: 126 }) });
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFetch } from '../../hooks';
 import CharacterInfo from '../CharacterInfo/CharacterInfo';
+import Spinner from '../Spinner/Spinner';
 import './CharacterCard.css';
 
 function CharacterCard({ characterUrl }) {
@@ -8,15 +9,15 @@ function CharacterCard({ characterUrl }) {
 
    if (isLoading)
       return (
-         <div className='card character-card'>
-            <h2>Loading...</h2>
+         <div className='card character-card loading'>
+            <Spinner />
          </div>
       );
 
    if (error)
       return (
-         <div className='card character-card'>
-            <h2>Error...</h2>
+         <div className='card character-card error'>
+            <h3 className='error'>Something went wrong!</h3>
          </div>
       );
 

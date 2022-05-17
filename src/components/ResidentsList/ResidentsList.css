@@ -1,13 +1,11 @@
-.spinner, .error {
+.list-empty {
+    font-size: var(--second-subtitle-font-size);
     text-align: center;
+
 }
 
 .residents-list {
     min-height: calc(100vh - 458px);
-}
-
-.residents-list.list-empty {
-    text-align: center;
 }
 
 .residents-list-title {

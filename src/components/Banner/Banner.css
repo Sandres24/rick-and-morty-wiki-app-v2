@@ -3,4 +3,22 @@
     background-position-y: 20%;
     background-size: cover;
     height: 200px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.banner-title {
+    font-size: var(--title-font-size);
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    text-align: center;
+    line-height: 2rem;
+}
+
+@media (min-width: 768px) {
+    .banner-title {
+        font-size: 3.5rem;
+        line-height: normal;
+    }
 }
